@@ -11,7 +11,7 @@ class Config(object):
      # Get these values from my.telegram.org
     AUTH_USERS = set(
         int(x) for x in get_config(
-            "AUTH_USERS",
+            "2036803347 6691641006 -1002103913042",
             should_prompt=True
         ).split()
     )
