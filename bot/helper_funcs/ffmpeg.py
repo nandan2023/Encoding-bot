@@ -140,13 +140,13 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         if difference > 0:
           ETA = TimeFormatter(difference*1000)
         percentage = math.floor(elapsed_time * 100 / total_time)
-        progress_str = "♻️<b>ᴘʀᴏɢʀᴇss:</b> {0}%\n[{1}{2}]".format(
+        progress_str = "<b>♻️ᴘʀᴏɢʀᴇss:</b> {0}%\n[{1}{2}]".format(
             round(percentage, 2),
             ''.join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 10))]),
             ''.join([UN_FINISHED_PROGRESS_STR for i in range(10 - math.floor(percentage / 10))])
             )
-        stats = f'⚡ <b>ᴇɴᴄᴏᴅɪɴɢ ɪɴ ᴘʀᴏɢʀᴇss</b>\n\n' \
-                f'🕛 <b>ᴛɪᴍᴇ ʟᴇғᴛ:</b> {ETA}\n\n' \
+        stats = f'<b>⚡ᴇɴᴄᴏᴅɪɴɢ ɪɴ ᴘʀᴏɢʀᴇss</b>\n\n' \
+                f'<b>🕛 ᴛɪᴍᴇ ʟᴇғᴛ:</b> {ETA}\n\n' \
                 f'{progress_str}\n'
         try:
           await message.edit_text(
