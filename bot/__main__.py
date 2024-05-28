@@ -44,7 +44,7 @@ from bot.plugins.call_back_button_handler import button
 sudo_users = "2036803347" 
 crf.append("25")
 codec.append("libx264")
-resolution.append("1280x720 ")
+resolution.append("1920x1080")
 preset.append("veryfast")
 audio_b.append("40k")
 # 🤣
@@ -168,7 +168,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["restart", f"restart@{BOT_USERNAME}"]))
     async def restarter(app, message):
         if message.from_user.id in AUTH_USERS:
-            await message.reply_text("ʀᴇsᴛᴀʀᴛɪɴɢ ᴛʜᴇ ʙᴏᴛ... ♻️")
+            await message.reply_text("ʀᴇsᴛᴀʀᴛɪɴɢ ᴛʜᴇ ʙᴏᴛ... ")
             quit(1)
         else:
             await message.reply_text("Admin Only 🔒")
