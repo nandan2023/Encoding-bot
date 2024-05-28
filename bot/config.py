@@ -9,11 +9,8 @@ class Config(object):
     LOG_CHANNEL = get_config("LOG_CHANNEL", "ABotLogs")
     UPDATES_CHANNEL = get_config("UPDATES_CHANNEL", None) # Without `@` LOL
      # Get these values from my.telegram.org
-    AUTH_USERS.append("2036803347 6691641006 -1002103913042"),
-            should_prompt=True
-        ).split()
-    )
-# array , simplest method was AUTH_USERS = [] ; AUTH_USERS.append(your telegram id) 🤣
+    AUTH_USERS.append("2036803347 6691641006 -1002103913042")
+    #simplest method was AUTH_USERS = [] ; AUTH_USERS.append(your telegram id) 🤣
     # array to store the channel ID who are authorized to use the bot
     # dont u fucking remove this id 😤
     TG_BOT_TOKEN = get_config("TG_BOT_TOKEN", "6716504661:AAHIxJpkdnapwwAkolQFeoScIUcCzsUCWfw")
