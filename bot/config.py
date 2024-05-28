@@ -4,9 +4,9 @@ class Config(object):
     SESSION_NAME = get_config("SESSION_NAME", "AHCompressorBot")
     # AHCompressBot....
     # sucks Dude
-    APP_ID = int(get_config("APP_ID", "19863702"))
-    API_HASH = get_config("API_HASH", "6d48cb362a97a43cfc944fd5c0f917f9")
-    LOG_CHANNEL = get_config("LOG_CHANNEL", "encoderbotlogsss")
+    APP_ID = int(get_config("APP_ID", "26376042"))
+    API_HASH = get_config("API_HASH", "1f5343b0646645ca1eaf7c4759fc248f")
+    LOG_CHANNEL = get_config("LOG_CHANNEL", "ABotLogs")
     UPDATES_CHANNEL = get_config("UPDATES_CHANNEL", None) # Without `@` LOL
      # Get these values from my.telegram.org
     AUTH_USERS = set(
@@ -18,11 +18,11 @@ class Config(object):
 # array , simplest method was AUTH_USERS = [] ; AUTH_USERS.append(your telegram id) 🤣
     # array to store the channel ID who are authorized to use the bot
     # dont u fucking remove this id 😤
-    TG_BOT_TOKEN = get_config("TG_BOT_TOKEN", "6552074969:AAGDmeIZzHgd6o0c3N2L6E6hkk-k7eLumLY")
+    TG_BOT_TOKEN = get_config("TG_BOT_TOKEN", "6716504661:AAHIxJpkdnapwwAkolQFeoScIUcCzsUCWfw")
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = get_config("DOWNLOAD_LOCATION", "/app/downloads")
     # Telegram maximum file upload size
-    BOT_USERNAME = get_config("BOT_USERNAME", "pro_encoder_xbot")
+    BOT_USERNAME = get_config("BOT_USERNAME", "AniCoder_03_Bot")
     MAX_FILE_SIZE = 2097152000
     TG_MAX_FILE_SIZE = 2097152000
     FREE_USER_MAX_FILE_SIZE = 2097152000
@@ -34,8 +34,8 @@ class Config(object):
     # maximum message length in Telegram
     MAX_MESSAGE_LENGTH = 4096
     # add config vars for the display progress
-    FINISHED_PROGRESS_STR = get_config("FINISHED_PROGRESS_STR", "▣")
-    UN_FINISHED_PROGRESS_STR = get_config("UN_FINISHED_PROGRESS_STR", "▢")
+    FINISHED_PROGRESS_STR = get_config("FINISHED_PROGRESS_STR", "█")
+    UN_FINISHED_PROGRESS_STR = get_config("UN_FINISHED_PROGRESS_STR", "▒")
     LOG_FILE_ZZGEVC = get_config("LOG_FILE_ZZGEVC", "Log.txt")
       # because, https://t.me/c/1494623325/5603
     SHOULD_USE_BUTTONS = get_config("SHOULD_USE_BUTTONS", False)
