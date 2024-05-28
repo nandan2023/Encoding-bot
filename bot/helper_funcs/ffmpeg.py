@@ -28,14 +28,51 @@ from bot import (
     audio_b,
     preset,
     codec,
+    watermark,
     pid_list
 )
 
 async def convert_video(video_file, output_directory, total_time, bot, message, chan_msg):
-    # https://stackoverflow.com/a/13891070/4723940
     kk = video_file.split("/")[-1]
     aa = kk.split(".")[-1]
-    out_put_file_name = kk.replace(f".{aa}", "[Ongoing_Sensei].mkv")
+    
+    if '@' in kk:
+        kk = re.sub(r'@.*?(?=\.)', '', kk)
+    
+    if kk.startswith('[') and ']' in kk:
+        kk = kk[kk.find(']') + 1:]
+    
+    season_match = re.search(r'S(\d+)', kk)
+    episode_match = re.search(r'E(\d+)', kk)
+    
+    season_number = season_match.group(1) if season_match else ''
+    episode_number = episode_match.group(1) if episode_match else ''
+    
+    kk = re.sub(r'S\d+', '', kk)
+    kk = re.sub(r'E\d+', '', kk)
+    
+    if not season_number and episode_number:
+        kk = f'E{episode_number}' + kk
+        
+    elif not season_number and not episode_number and re.search(r'\d+', kk):
+        number_match = re.search(r'\d+', kk)
+        number = number_match.group(0)
+        kk = f'{number} ' + kk.replace(number, '', 1)
+    
+    elif season_number or episode_number:
+        kk = f'S{season_number}E{episode_number}' + kk
+
+    if resolution[0] == "854x480":
+        kk = re.sub(r'(720p|1080p|HDRip)', '480p', kk)
+
+    if resolution[0] == "1280x720":
+        kk = re.sub(r'(1080p|HDRip)', '720p', kk)
+       
+    if resolution[0] == "1920x1080":
+        kk = re.sub(r'(HDRip)', '1080p', kk)
+    
+    out_put_file_name = kk.replace(f".{aa}", "@Ongoing_Sensei].mkv")
+    
     #out_put_file_name = video_file + "_compressed" + ".mkv"
     progress = output_directory + "/" + "progress.txt"
     with open(progress, 'w') as f:
@@ -49,7 +86,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     resolution.append("1920x1080")
     preset.append("veryfast")
     audio_b.append("40k")
-    file_genertor_command =  f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' -metadata 'title=Encoded by Anime Sensei' -c:v {codec[0]}  -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} -preset {preset[0]} -metadata:s:v 'title=Anime Sensei' -metadata:s:a 'title=Anime Sensei' -metadata:s:s 'title=Anime Sensei' '{out_put_file_name}' -y"
+    file_genertor_command = f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' -metadata 'title=Encoded by Anime Sensei' -c:v {codec[0]}  -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} -preset {preset[0]} -metadata:s:v 'title=Anime Sensei' -metadata:s:a 'title=Anime Sensei' -metadata:s:s 'title=Anime Sensei' '{out_put_file_name}' -y"
  #Done !!
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
@@ -103,13 +140,13 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         if difference > 0:
           ETA = TimeFormatter(difference*1000)
         percentage = math.floor(elapsed_time * 100 / total_time)
-        progress_str = "♻️ᴘʀᴏɢʀᴇss : {0}%\n[{1}{2}]".format(
+        progress_str = "♻️<b>ᴘʀᴏɢʀᴇss:</b> {0}%\n[{1}{2}]".format(
             round(percentage, 2),
             ''.join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 10))]),
             ''.join([UN_FINISHED_PROGRESS_STR for i in range(10 - math.floor(percentage / 10))])
             )
-        stats = f'⚡ᴇɴᴄᴏᴅɪɴɢ ɪɴ ᴘʀᴏɢʀᴇss \n\n' \
-                f'🕛ᴛɪᴍᴇ ʟᴇғᴛ: {ETA}\n\n' \
+        stats = f'⚡ <b>ᴇɴᴄᴏᴅɪɴɢ ɪɴ ᴘʀᴏɢʀᴇss</b>\n\n' \
+                f'🕛 <b>ᴛɪᴍᴇ ʟᴇғᴛ:</b> {ETA}\n\n' \
                 f'{progress_str}\n'
         try:
           await message.edit_text(
