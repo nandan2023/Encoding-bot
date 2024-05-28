@@ -24,7 +24,7 @@
     },
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string. Get this from @BotFather",
-      "value": "6617207139:AAFCJx0JEa-sUfKOf9DS97kWxzL3htMMgRY",
+      "value": "",
       "required": true
     },
     "APP_ID": {
@@ -39,7 +39,7 @@
     },
     "BOT_USERNAME": {
       "description": "Your Bot Username. Without `@` before Username!",
-      "value": "AniCoder_01_Bot",
+      "value": "",
       "required": true
     },
     "LOG_CHANNEL": {
