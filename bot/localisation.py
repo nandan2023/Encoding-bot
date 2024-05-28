@@ -13,11 +13,11 @@ class Localisation:
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     
     
-    DOWNLOAD_START = "⚡ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ.... \n"
+    DOWNLOAD_START = "ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ.... \n"
     
-    UPLOAD_START = "⚡ᴜᴘʟᴏᴀᴅɪɴɢ.... \n"
+    UPLOAD_START = "ᴜᴘʟᴏᴀᴅɪɴɢ.... \n"
     
-    COMPRESS_START = "⚡ᴛʀʏɪɴɢ ᴛᴏ ᴇɴᴄᴏᴅᴇ..."
+    COMPRESS_START = "ᴛʀʏɪɴɢ ᴛᴏ ᴇɴᴄᴏᴅᴇ..."
     
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     
