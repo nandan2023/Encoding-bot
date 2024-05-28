@@ -46,9 +46,9 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
      ## lol 😂
     crf.append("28")
     codec.append("libx264")
-    resolution.append("1280x720")
+    resolution.append("850x480")
     preset.append("veryfast")
-    audio_b.append("35k")
+    audio_b.append("40k")
     file_genertor_command =  f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' -metadata 'title=Encoded by Anime Sensei' -c:v {codec[0]}  -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} -preset {preset[0]} -metadata:s:v 'title=Anime Sensei' -metadata:s:a 'title=Anime Sensei' -metadata:s:s 'title=Anime Sensei' '{out_put_file_name}' -y"
  #Done !!
     COMPRESSION_START_TIME = time.time()
@@ -103,13 +103,13 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         if difference > 0:
           ETA = TimeFormatter(difference*1000)
         percentage = math.floor(elapsed_time * 100 / total_time)
-        progress_str = "📈 Progress: {0}%\n[{1}{2}]".format(
+        progress_str = "♻️ᴘʀᴏɢʀᴇss : {0}%\n[{1}{2}]".format(
             round(percentage, 2),
             ''.join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 10))]),
             ''.join([UN_FINISHED_PROGRESS_STR for i in range(10 - math.floor(percentage / 10))])
             )
-        stats = f'🗳 ENCODING IN PROGRESS\n\n' \
-                f'⌚ TIME LEFT: {ETA}\n\n' \
+        stats = f'⚡ᴇɴᴄᴏᴅɪɴɢ ɪɴ ᴘʀᴏɢʀᴇss \n\n' \
+                f'🕛ᴛɪᴍᴇ ʟᴇғᴛ: {ETA}\n\n' \
                 f'{progress_str}\n'
         try:
           await message.edit_text(
@@ -133,7 +133,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     r = stderr.decode()
     try:
         if er:
-           await message.edit_text(str(er) + "\n\n**ERROR** Contact @Chowdhury_Siam")
+           await message.edit_text(str(er) + "\n\n**ERROR** Contact @Sensei_Rimuru")
            os.remove(videofile)
            os.remove(out_put_file_name)
            return None
