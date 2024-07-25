@@ -43,10 +43,10 @@ from bot.plugins.status_message_fn import (
 
 from bot.commands import Command
 from bot.plugins.call_back_button_handler import button
-sudo_users = "2036803347" 
-crf.append("25")
-codec.append("libx264")
-resolution.append("1920x1080")
+sudo_users = "5179011789" 
+crf.append("27")
+codec.append("libx265")
+resolution.append("1280x720")
 preset.append("veryfast")
 audio_b.append("40k")
 # 🤣
@@ -158,7 +158,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["compress", f"compress@{BOT_USERNAME}"]))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot contact @Sensei_Rimuru")
+            return await message.reply_text("You are not authorised to use this bot contact @cmd_rulf")
         query = await message.reply_text("ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ...\nᴘʟᴇᴀsᴇ ʙᴇ ᴘᴀᴛɪᴇɴᴛ ʏᴏᴜ ᴇɴᴄᴏᴅᴇ ᴡɪʟʟ sᴛᴀʀᴛ sᴏᴏɴ", quote=True)
         data.append(message.reply_to_message)
         if len(data) == 1:
@@ -180,7 +180,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & (filters.video | filters.document))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot contact @Sensei_Rimuru")
+            return await message.reply_text("You are not authorised to use this bot contact @cmd_rulf")
         query = await message.reply_text("ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ...\nᴘʟᴇᴀsᴇ ʙᴇ ᴘᴀᴛɪᴇɴᴛ ʏᴏᴜ ᴇɴᴄᴏᴅᴇ ᴡɪʟʟ sᴛᴀʀᴛ sᴏᴏɴ", quote=True)
         data.append(message)
         if len(data) == 1:
@@ -190,7 +190,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & (filters.photo))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot contact @Sensei_Rimuru")
+            return await message.reply_text("You are not authorised to use this bot contact @cmd_rulf")
         os.system('rm thumb.jpg')
         await message.download(file_name='/app/thumb.jpg')
         await message.reply_text('ᴛʜᴜᴍʙɴᴀɪʟ sᴀᴠᴇᴅ ✅')
@@ -214,7 +214,7 @@ if __name__ == "__main__" :
    
     @app.on_message(filters.incoming & filters.command(["help", f"help@{BOT_USERNAME}"]))
     async def help_message(app, message):
-        await message.reply_text("<b>Maintained By : @Anime_Sensei_Network</b>", quote=True)
+        await message.reply_text("<b>♨️ Maintained By : @cmd_rulf</b>", quote=True)
   
     @app.on_message(filters.incoming & filters.command(["log", f"log@{BOT_USERNAME}"]))
     async def help_message(app, message):
