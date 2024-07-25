@@ -1,27 +1,27 @@
 from bot.get_cfg import get_config
 class Config(object):
     # You can keep this default
-    SESSION_NAME = get_config("SESSION_NAME", "AHCompressorBot")
+    SESSION_NAME = get_config("SESSION_NAME", "RulfEnc")
     # AHCompressBot....
     # sucks Dude
-    APP_ID = int(get_config("APP_ID", "25918874"))
-    API_HASH = get_config("API_HASH", "87c7c525932cf3d753bea33786ad71ee")
-    LOG_CHANNEL = get_config("LOG_CHANNEL", "RulfEncoderLogs")
+    APP_ID = int(get_config("APP_ID", ""))
+    API_HASH = get_config("API_HASH", "")
+    LOG_CHANNEL = get_config("LOG_CHANNEL", "")
     UPDATES_CHANNEL = get_config("UPDATES_CHANNEL", None) # Without `@` LOL
      # Get these values from my.telegram.org
-    AUTH_USERS = get_config("AUTH_USERS", "5179011789")
+    AUTH_USERS = get_config("AUTH_USERS", "")
     AUTH_USERS = [int(user_id) for user_id in AUTH_USERS.split(',')]
     #simplest method was AUTH_USERS = [] ; AUTH_USERS.append(your telegram id) 🤣
     # array to store the channel ID who are authorized to use the bot
     # dont u fucking remove this id 😤
-    TG_BOT_TOKEN = get_config("TG_BOT_TOKEN", "7344124882:AAG1Y8tpX3JwzVmgyP_0jWzW_Giagzf4GsU")
+    TG_BOT_TOKEN = get_config("TG_BOT_TOKEN", "")
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = get_config("DOWNLOAD_LOCATION", "/app/downloads")
     # Telegram maximum file upload size
-    BOT_USERNAME = get_config("BOT_USERNAME", "EncdeX_bot")
-    MAX_FILE_SIZE = 2097152000
-    TG_MAX_FILE_SIZE = 2097152000
-    FREE_USER_MAX_FILE_SIZE = 2097152000
+    BOT_USERNAME = get_config("BOT_USERNAME", "")
+    MAX_FILE_SIZE = 3980000000
+    TG_MAX_FILE_SIZE = 3980000000
+    FREE_USER_MAX_FILE_SIZE = 3980000000
     # default thumbnail to be used in the videos
     DEF_THUMB_NAIL_VID_S = get_config("DEF_THUMB_NAIL_VID_S", "https://placehold.it/90x90")
     # proxy for accessing youtube-dl in GeoRestricted Areas
