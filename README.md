@@ -2,7 +2,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-/CMD
+/Commands 🏷️
 ```
 start - Bot Alive  
 help - Help You  
