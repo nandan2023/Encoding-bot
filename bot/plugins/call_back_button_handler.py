@@ -60,15 +60,15 @@ async def button(bot, update: CallbackQuery):
                             datetime.timedelta(minutes=00, hours=6)
                         bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
                         now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-                        await bot.send_message(chat_id, f"**Last Process Cancelled, Bot is Free Now !!** \n\nProcess Done at `{now}`", parse_mode="markdown")
+                        await bot.send_message(chat_id, f"**𝙻𝚊𝚜𝚝 𝙿𝚛𝚘𝚌𝚎𝚜𝚜 𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚎𝚍.\n.....𝙱𝚘𝚝 𝚒𝚜 𝙵𝚛𝚎𝚎 𝙽𝚘𝚠.....🥀**", parse_mode="markdown")
             else:
                 try:
-                    await update.message.edit_text("You are not allowed to do that 🤭")
+                    await update.message.edit_text("Yᴏᴜ ᴀʀᴇ Nᴏᴛ Aʟʟᴏᴡᴇᴅ ᴛᴏ ᴅᴏ Tʜᴀᴛ 🤭")
                 except:
                     pass
 
         elif cb_data == "fuckoff":
             try:
-                await update.message.edit_text("Okay! Fine 🤬")
+                await update.message.edit_text("Oᴋᴀʏ! Fɪɴᴇ 🤬")
             except:
                 pass
