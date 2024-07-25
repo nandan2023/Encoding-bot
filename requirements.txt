@@ -1,10 +1,11 @@
+aiohttp
+ffmpeg
+anitopy
 Pillow
 psutil
 hachoir
 tgcrypto
 pyrogram==2.0.106
 motor
-https://github.com/Tinche/aiofiles/archive/master.zip
-dnspython
-ffmpeg
-asyncio 
+https://github.com/pyrogram/pyrogram/archive/master.zip
+dnspython 
